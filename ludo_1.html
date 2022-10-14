@@ -45,17 +45,45 @@
             </div>
 
             <div class="col-md-4 d-flex flex-column">
-                <h1 class="border border-primary text-center" id="ludo_result_4"> Click below button to get random number between 10 to 20 </h1>
+                <h1 class="border border-primary text-center" id="ludo_result_4"> Click below button to get random
+                    number between 10 to 20 </h1>
                 <input type="button" value="Click me to get between 10 to 20"
-                onclick = "document.getElementById('ludo_result_4').innerHTML =  ludo_4(10, 20)">
+                    onclick="document.getElementById('ludo_result_4').innerHTML =  ludo_4(10, 20)">
             </div>
 
-
-            <div class="col-md-4 d-flex flex-column">
-                <h1 class="border border-primary text-center" id="ludo_result_5"> Click below button to get random number between 10 to 20 </h1>
-                <input type="button" value="Click me to get between 10 to 20"
-                onclick = "document.getElementById('ludo_result_5').innerHTML =  ludo_5(10, 20)">
+            <div class="col-md-4">
+                <h1 id="students"> </h1>
+                <button onclick="document.getElementById('students').innerHTML=stu()"> Click to show students name </button>
             </div>
+
+            <div class="col-md-4">
+                <h1 id="number_sort"> </h1>
+                <button onclick="document.getElementById('number_sort').innerHTML = sortNumber()"> Click Me </button>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="col-md-4">
+                <form action="">
+                    <input type="number" id="inpuNumber">
+                    <input type="submit" value="submit" onclick="document.getElementById('input_result').innerHTML = leapYearR()">
+                </form>
+                <div id="input_result"></div>
+            </div>
+
+            <script>
+                function leapYear()
+                var leapYearR = document.getElementById('inpuNumber')
+                
+            </script>
+
         </div>
     </div>
 
@@ -75,22 +103,41 @@
         // for any random number between 1 to 10
         function ludo_3() {
             // return Math.floor(Math.random() * 100) + 1;
-            return Math.floor(Math.random() * 10)+1;
+            return Math.floor(Math.random() * 10) + 1;
         }
 
         // for random number between 10 to 20
-        function ludo_4(min, max){
+        function ludo_4(min, max) {
             // return Math.floor(Math.random() * 10)+1;
             // return Math.floor(Math.random() * (10-2))+2;
-            return Math.floor(Math.random() * (max - min + 1) ) + min;
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        } 
+
+        function stu() {
+            const students = ["Kamal", "Jalam", "Linkon", "Faroque", "Plabon", "Akash", "Basher", "Zahdid"];
+            // console.log(students.sort());
+            var student = students.sort();
+            return student;          
         }
 
 
-        function ludo_5(min, max){
-            return Math.floor(Math.random() * (max - min + 9 ) ) + min; 
+        function sortNumber(){
+            var numbers = [5, 2, 1, 8, 99, 25, 54];
+                return numbers.sort(function(a, b){ a - b;
+            })
         }
 
-        
+
+        //Leap yar
+        function isLeapYear(year){
+            if( (year % 400 === 0) || ( (year % 4 === 0) && (year % 100 !== 0) ) ){
+                console.log(`${year} is a leap year`);
+            } else {
+                console.log(`${year} is not a leap year`);
+            }
+        }
+
+        isLeapYear(2028);
 
 
 
@@ -114,6 +161,8 @@
 
 
     </script>
+
+    <h3> This is Javascript </h3>
 
 
 
